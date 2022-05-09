@@ -17,7 +17,7 @@ async fn main() -> std::io::Result<()> {
         );
 
 
-    let address = format!("127.0.0.1:{}", configuration.application.port);
+    let address = format!("{}:{}", configuration.application.host, configuration.application.port);
     let listener = TcpListener::bind(address).expect("Failed to bind random port");
     run(listener, connection_pool)?.await
 }
